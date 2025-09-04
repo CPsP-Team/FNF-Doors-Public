@@ -1945,17 +1945,19 @@ class ArrowPath extends Modifier {
             currentValue = 1.0; //the code that stop the mod from running gets confused when it resets in the editor i guess??
         }
     public function loadPath() {
-        var file = CoolUtil.coolTextFile(Paths.modFolders("data/"+PlayState.SONG.song.toLowerCase()+"/customMods/path.txt"));
-        var file2 = CoolUtil.coolTextFile(Paths.getPreloadPath("data/"+PlayState.SONG.song.toLowerCase()+"/customMods/path.txt"));
+     // var file = CoolUtil.coolTextFile(Paths.modFolders("data/"+PlayState.SONG.song.toLowerCase()+"/customMods/path.txt"));
+        var file2 = CoolUtil.coolTextFile(Paths.getPreloadPath("data/"+PlayState.SONG.song.toLowerCase()+"/customMods/path.txt"));     
+       
         var filePath = null;
-        if (file != null) {
-            filePath = file;
-        }else if (file2 != null) {
+     //    if (file != null) {
+     //       filePath = file;
+     //    }
+        if (file2 != null) {
             filePath = file2;
         }else{
             return;
         }
-
+        
         var path = new List<TimeVector>();
         var _g = 0;
         while (_g < filePath.length) {
@@ -2039,7 +2041,7 @@ class ArrowPath extends Modifier {
 
     // var strumTimeDiff = Conductor.songPosition - note.strumTime;     -- saw this in the Groovin.js
     public function executePath(currentBeat, strumTimeDiff:Float, column, player, pos): Vector4 {
-        if (_path == null) {
+       if (_path == null) {
             loadPath();
         }
         var path = getPointAlongPath(strumTimeDiff / -1500.0 * _pathDistance);

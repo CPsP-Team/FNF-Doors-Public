@@ -46,7 +46,7 @@
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<define name="MODS_ALLOWED" if="desktop" />
 	<define name="LUA_ALLOWED" if="desktop || mobile" />
-	<define name="VIDEOS_ALLOWED" if="web || windows || linux || mac" unless="32bits"/>
+	<define name="VIDEOS_ALLOWED" if="web || windows || linux || android" unless="32bits"/>
 	<define name="VIDEOS_NOT_MAC" if="web || windows || linux" unless="32bits"/>
 	<define name="ACHIEVEMENTS_ALLOWED" if="desktop"/>
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
@@ -100,7 +100,7 @@
 
 	<!-- Defines -->
 	<define name="GLASSHAT" if="final"/>
-	<define name="DISCORD"/>
+	<define name="DISCORD" if="desktop"/>
 	<define name="CRASH_HANDLER" if="desktop" />
 	<haxedef name="openfl-enable-handle-error" />
 	<haxedef name="HXVLC_NO_SHARE_DIRECTORY" if="VIDEOS_ALLOWED" />

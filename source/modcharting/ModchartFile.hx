@@ -64,7 +64,7 @@ class ModchartFile
         var rawJson = null;
         var folderShit:String = "";
         #if sys
-        #if PSYCH
+        #if MODS_ALLOWED
 		var moddyFile:String = Paths.modsJson(Paths.formatToSongPath(folder) + '/modchart');
 		if(FileSystem.exists(moddyFile)) {
 			rawJson = File.getContent(moddyFile).trim();
@@ -83,7 +83,8 @@ class ModchartFile
             #end
             
             //trace(filePath);
-            #if sys
+            
+              #if sys
             if(FileSystem.exists(filePath))
                 rawJson = File.getContent(filePath).trim();
             else #end //should become else if i think???

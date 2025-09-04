@@ -6,7 +6,6 @@ import objects.ui.DoorsOption.DoorsOptionType;
 import objects.ui.DoorsButton;
 import flixel.math.FlxRect;
 import objects.ui.DoorsOption;
-import Discord.DiscordClient;
 import flixel.FlxG;
 import flixel.FlxSprite;
 
