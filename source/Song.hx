@@ -151,8 +151,8 @@ class Song
 		var formattedSong:String   = Paths.formatToSongPath(jsonInput);
 
 		//Prioritize assets folder path if it exists
-		var path =Paths.json(formattedFolder + '/' + formattedSong);
-		if(FileSystem.exists(path)) {
+		var path = Paths.json(formattedFolder + '/' + formattedSong);
+		if(Assets.exists(path)) {
 			return true;
 		}
 
@@ -191,12 +191,12 @@ class Song
 		}
 		#end
 
-		var path =Paths.json(formattedFolder + '/' + formattedSong);
+		var path = Paths.json(formattedFolder + '/' + formattedSong);
 		try{
 			if(rawJson == null) {
 				if(FileSystem.exists(path)) {
-					#if sys
-					rawJson = File.getContent(path).trim();
+					#if mobile
+					rawJson = Assets.getText(path).trim();
 					#else
 					rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
 					#end

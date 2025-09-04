@@ -15,10 +15,9 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import gamejolt.*;
-
+import lime.app.Application;
 //crash handler stuff
 #if CRASH_HANDLER
-import lime.app.Application;
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack;
 import haxe.io.Path;
